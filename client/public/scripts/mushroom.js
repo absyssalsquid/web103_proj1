@@ -23,7 +23,7 @@ const renderMushroom = async () => {
     const mushroom = await response.json();
     mushroomContent.innerHTML = `
         <div class="img-container">
-            <img src="${mushroom.img_url}" alt="${mushroom.common_name[0]}" class="image">
+            <img src="${mushroom.image_url}" alt="${mushroom.common_name[0]}" class="image">
         </div>
 
         <div class="text-container ${mushroom.color_code}">

@@ -24,10 +24,6 @@
     object-fit: cover;
 }
 
-h2.err{
-    color: rgb(165, 42, 42);
-}
-
 .text-container{
     width: 100%;
     padding: 1rem 1.5rem;

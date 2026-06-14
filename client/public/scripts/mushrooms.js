@@ -1,18 +1,30 @@
 const renderMushrooms = async () => {
-    const response = await fetch('/mushrooms')
-    const data = await response.json()
-
     const mainContent = document.querySelector('.card-container')
-    if (data) {
-        data.map((item, index) => {
-            const card = createCard(item, index)
-            mainContent.appendChild(card)
-        })
+
+    const response = await fetch('/mushrooms')
+    let err_msg = ""
+    if (response.ok) {
+        const data = await response.json()
+        if (data) {
+            data.map((item) => {
+                const card = createCard(item, item.id)
+                mainContent.appendChild(card)
+            })
+        }
+        else {
+            err_msg = 'No mushrooms available.'
+        }
     }
-    else {
+    else{
+        err_msg = `Error fetching mushrooms. ${response.status} ${response.statusText}`
+    }
+
+    if (err_msg) {
         const err = document.createElement('h2')
-        err.textContent = 'No Mushrooms Available'
+        err.classList.add('err')
+        err.textContent = err_msg
         mainContent.appendChild(err)
+        return
     }
 }
 
@@ -24,7 +36,7 @@ function createCard(json, index) {
     recto.className = 'recto'
 
     const img = document.createElement('img')
-    img.src = json.img_url
+    img.src = json.image_url
     recto.appendChild(img)
 
 

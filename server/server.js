@@ -1,4 +1,5 @@
 import express from 'express'
+import './config/dotenv.js'
 import mushroomsRouter from './routes/mushrooms.js'
 
 const app = express()
