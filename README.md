@@ -27,6 +27,6 @@ render dashboard
 <img src='walkthrough/render.gif' width='' alt='render dashboard' />
 
 terminal query showing contents of database
-<img src='walkthrough/terminal_query.gif' width='' alt='terminal query' />
+<img src='walkthrough/terminal_query.png' width='' alt='terminal query' />
 
 GIF created with [ScreenToGif](https://www.screentogif.com/) for Windows  GIF tool here
